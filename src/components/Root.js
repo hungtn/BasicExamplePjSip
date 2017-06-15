@@ -1,11 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Provider } from 'react-redux';
-import AppContainer from './AppContainer';
+import AppWithNavigationState from './../navigators/AppNavigator';
 
 const Root = ({ store }) => (
   <Provider store={store}>
-    <AppContainer />
+    <AppWithNavigationState />
   </Provider>
 );
+
+Root.propTypes = {
+  store: PropTypes.object.isRequired,
+};
 
 export default Root;
